@@ -2,6 +2,7 @@
 
 ## What is Kubernetes?
 ANS: 
+   
     1) Google Cloud is the birthplace of Kubernetes—originally developed at Google and released as open source in 2014.  Kubernetes builds on 15 years of running Google's containerized workloads and the valuable contributions from the open source community. Inspired by Google’s internal cluster management system, Borg, Kubernetes makes everything associated    with deploying and managing your application easier.]
 
     2)Kubernetes (sometimes shortened to K8s with the 8 standing for the number of letters between the “K” and the “s”) is an open source system to deploy, scale, and manage containerized applications anywhere.

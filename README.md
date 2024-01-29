@@ -15,7 +15,8 @@ ANS:
 
 
 ## why we use kubernets?
-ANS: 
+ANS:
+
     1)Kubernetes is used for a variety of reasons, including reliability, scalability, security, cost optimization, and  faster time to market. It automates the deployment, scaling, and management of containerized applications, making it easier to deploy and manage applications, scale them as needed, and ensure their reliability and security.
 
     2)Kubernetes also helps in optimizing IT costs by efficiently managing container orchestration and allowing for better resource utilization.
@@ -37,7 +38,9 @@ ANS:
     10)security management
 
 ## Architecture of Kubernetes
-ANS: https://media.geeksforgeeks.org/wp-content/uploads/20190904034023/Docker2-1-1024x439.png
+ANS: 
+
+     https://media.geeksforgeeks.org/wp-content/uploads/20190904034023/Docker2-1-1024x439.png
 
      The architecture of Kubernetes is designed to provide a scalable and extensible platform for deploying, managing, and orchestrating containerized applications.
 
@@ -66,6 +69,7 @@ ANS: https://media.geeksforgeeks.org/wp-content/uploads/20190904034023/Docker2-1
 
     7)Service:A service defines a set of pods and a policy to access them. It provides a stable endpoint (IP address and DNS name) to access the pods, enabling load balancing and service discovery.
 
+
 ## Lifecycle of kubernetes
 ANS: 
 
@@ -76,5 +80,19 @@ ANS:
     * The Kubelet on each node communicates with the API server, while the container runtime pulls and runs containers.  Networking and optionally, load balancing mechanisms facilitate communication between pods and services. 
 
     * Monitoring and logging tools capture relevant data, and the results of the user's request are then communicated back, completing the request flow.
+
+## Kubectl Commands
+
+Ref: https://www.bluematador.com/learn/kubectl-cheatsheet
+
+
+kubectl cluster-info    # to get cluster information
+kubectl api-resources   # to list available k8s objects
+kubectl api-version     # to list available api versions
+kubectl get nodes       # to get list of nodes
+kubectl get nodes -o wide   # to get IP of the nodes
+kubectl get pods        # to get list of pods
+kubectl get pods -o wide    # to get IP of the pods
+
 
 

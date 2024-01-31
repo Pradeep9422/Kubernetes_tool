@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deployment
+  name: my-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: example-app
+      app: my-app
   template:
     metadata:
       labels:
-        app: example-app
+        app: my-app
     spec:
       containers:
-        - name: example-container
-          image: your-image:tag
+        - name: my-container
+          image: httpd
           ports:
             - containerPort: 80

@@ -1,98 +1,113 @@
-# KUBERNETES
+##KUBERNETES
+##What is Kubernetes?
+Kubernetes, often abbreviated as K8s
+It is an open-source container orchestration platform.
+It is designed to automate the deployment, scaling, and management of containerized applications.
+Why we use Kubernetes?
+Kubernetes is a powerful tool for managing containerized applications in production environments.
 
-## What is Kubernetes?
-ANS: 
-   
-    1) Google Cloud is the birthplace of Kubernetes—originally developed at Google and released as open source in 2014.  Kubernetes builds on 15 years of running Google's containerized workloads and the valuable contributions from the open source community. Inspired by Google’s internal cluster management system, Borg, Kubernetes makes everything associated    with deploying and managing your application easier.]
+Its features address many challenges associated with deploying and maintaining distributed systems
 
-    2)Kubernetes (sometimes shortened to K8s with the 8 standing for the number of letters between the “K” and the “s”) is an open source system to deploy, scale, and manage containerized applications anywhere.
+Key features of Kubernetes include:
 
-    3)Kubernetes, often referred to as K8s, is an open-source platform for managing containerized workloads and services.
-      . It is a portable, extensible, and extensible system that facilitates both declarative configuration and automation.
-      . Kubernetes was developed at Google and has since become the de facto standard for deploying and operating containerized applications.
-      
-    4)Providing automated container orchestration, Kubernetes improves your reliability and reduces the time and resources attributed to daily operations.
+Container Orchestration :
+Automates deployment and management of containerized applications.
+
+Scalability:
+Dynamically scales applications based on demand for optimal resource use.
+
+High Availability:
+Ensures reliable application performance by distributing containers across nodes.
+
+Portability:
+Provides a consistent platform across diverse infrastructures and environments.
+
+Resource Efficiency:
+Optimizes resource allocation and scales applications based on utilization.
+
+Service Discovery and Load Balancing:
+Facilitates exposing and balancing traffic for applications.
+
+Community and Ecosystem:
+benefits from a large, active open-source community and extensive tooling.
+
+Rolling Updates and Rollbacks:
+Supports seamless application updates and automatic rollbacks.
+
+Security and Compliance:
+Implements features for securing applications and managing access.
+
+Cost Savings:
+contributes to savings through optimized resource use and automation.
+
+Architecture of Kubernetes
+Kubernetes Cluster mainly consists of a Control Plane and Worker Machines called Nodes
+
+It is also called as Master-Slave system
+
+We can create single or multiple master nodes for high availability and scalability.
+
+We also can create multiple slave nodes to handle worl load
+
+key components and architecture of Kubernetes:
+
+API Server:
+
+The API Server acts as the central management entity and the frontend interface for the Kubernetes control plane.
+It processes RESTful requests to manage cluster resources and updates the corresponding objects in etcd.
+It serves as the communication hub for other control plane components to interact and manage the cluster.
+ETCD:
+
+etcd is a lightweight, distributed key-value store that securely and consistently stores the critical data of the Kubernetes cluster.
+It holds the cluster's configuration and state, including information about nodes, pods, configurations, secrets, and the state of workloads.
+Scheduler:
+
+The Scheduler is responsible for assigning workloads, specifically pods, to appropriate nodes.
+It selects nodes for new pods based on resource requirements, quality of service requirements, affinity specifications, and other criteria.
+Controller Manager:
+
+This component runs various controller processes in the background to regulate the state of the cluster and handle routine tasks.
+It helps in maintaining the desired state of the cluster.
+kublet:
+
+The kubelet is responsible for executing commands that come from the Kubernetes control plane, including instructions from the scheduler.
+It communicates with the control plane and ensures that containers within pods are running as expected.
+Kube-proxy:
+
+Kube-proxy maintains network rules on nodes, allowing communication between Pods.
+It handles network forwarding, load balancing, and service-related network tasks.
+Container Engine:
+
+The container engine on a worker node is responsible for executing and managing containers.
+It provides the runtime environment for running containerized applications within the Kubernetes cluster, handling tasks such as container creation, start-up, and resource isolation.
+POD:
+
+A Pod is the smallest deployable unit in Kubernetes.
+It's like wrapper around container.
+The worker node executes and hosts these Pods, running the specified containers within them.
 
 
-## why we use kubernets?
-ANS:
-
-    1)Kubernetes is used for a variety of reasons, including reliability, scalability, security, cost optimization, and  faster time to market. It automates the deployment, scaling, and management of containerized applications, making it easier to deploy and manage applications, scale them as needed, and ensure their reliability and security.
-
-    2)Kubernetes also helps in optimizing IT costs by efficiently managing container orchestration and allowing for better resource utilization.
-
-    3) Additionally, it provides multi-cloud flexibility, making it easier to run applications on any public cloud service or a combination of public and private clouds, thus avoiding vendor lock-in.
-
-    4)Furthermore, Kubernetes can help in achieving faster time to market by providing a portable, extensible, open-source platform for managing containerized workloads and services.
-
-    Here are some key reasons why organizations choose to use Kubernetes:
-    1)Container Orchestration
-    2)Scalability
-    3)High Availability
-    4)Portability
-    5)Rolling Updates and Rollbacks
-    6)Resource Efficiency
-    7)auto-healing & auto restart
-    8)auto-scaling
-    9)load balancing
-    10)security management
-
-## Architecture of Kubernetes
-ANS: 
-
-     https://media.geeksforgeeks.org/wp-content/uploads/20190904034023/Docker2-1-1024x439.png
-
-     The architecture of Kubernetes is designed to provide a scalable and extensible platform for deploying, managing, and orchestrating containerized applications.
-
-     1)Cluster:A cluster is a set of nodes grouped together to run containerized applications. The cluster is the foundation of the Kubernetes architecture.
-
-     2)Node:A node is a physical or virtual machine that runs containerized applications. Each node in the cluster runs a container runtime (such as Docker) to manage containers.
-
-     3)Master Node:The master node is responsible for managing the cluster and making global decisions about the cluster (e.g., scheduling), as well as detecting and responding to cluster events (e.g., starting up a new pod when a deployment's replicas field is unsatisfied).
-       Key components on the master node include:
-       * API Server: Exposes the Kubernetes API, which is used by users and other components.
-                     all the communication happens inside the cluster is with help of API'S.
-       * Controller Manager: Manages controller processes that regulate the state of the system.
-                     Controller Manger responsible to maintaing actual state and desire state.it manages all the 
-                     controller in kubernet.
-       * Scheduler: Assigns nodes to newly created pods based on resource requirements and constraints.
-                    Scheduler is responsible to schedule commands on particular worker node.
-       * etcd:etcd is a distributed key-value store that stores the configuration data of the cluster. It is used by the master components to store and retrieve configuration data, and it ensures high availability.
-
-    4)Kubelet:The kubelet is an agent that runs on each node in the cluster. It is responsible for making sure that containers are running in a pod.
-    It communicates with the master node components, receives instructions on which pods and containers to run, and ensures their proper execution.
-
-    5)Kube-proxy:Kube-proxy maintains network rules on nodes. It enables communication across the cluster, handles load balancing for services, and performs network address translation (NAT) for service exposure.
-      Allow network communiction inside the cluster. 
-
-    6)Pod:A pod is the smallest deployable unit in Kubernetes and represents a single instance of a running process in a cluster. It can contain one or more containers that share the same network namespace, storage, and can communicate with each other.
-
-    7)Service:A service defines a set of pods and a policy to access them. It provides a stable endpoint (IP address and DNS name) to access the pods, enabling load balancing and service discovery.
+Lifecycle of kubernetes
+A user or application initiates a request to create a new pod.
+The API server, the central control point, communicates with ETCD, a persistent data store, to gather information about available nodes.
+The scheduler, responsible for pod placement, analyzes resource availability and constraints to choose the best node for the pod.
+The API server informs the kubelet, the agent running on the selected node, about the pod scheduling decision.
+The kubelet creates the pod's containers and manages its lifecycle on that node.
+The kubelet sends status updates back to the API server about the pod's progress.
+The API server stores the updated cluster state information in ETCD, ensuring a consistent view for all components.
 
 
-## Lifecycle of kubernetes
-ANS: 
-
-    In the Kubernetes request flow, a user initiates a request, and their kubeconfig file is used for authentication against the Kubernetes API server. The API server --> acting as the control plane's entry point-->  validates and processes requests --> interacting with the etcd key-value store to manage cluster state.
-
-    * The Controller Manager and Scheduler ensure the desired state is maintained by assigning workloads to nodes.
- 
-    * The Kubelet on each node communicates with the API server, while the container runtime pulls and runs containers.  Networking and optionally, load balancing mechanisms facilitate communication between pods and services. 
-
-    * Monitoring and logging tools capture relevant data, and the results of the user's request are then communicated back, completing the request flow.
-
-## Kubectl Commands
-
+## K8s Cluster - Minikube - Kind - Kubeadm - EKS - GKE - AKS - ...
+Kubectl Commands
 Ref: https://www.bluematador.com/learn/kubectl-cheatsheet
 
-
- kubectl cluster-info    # to get cluster information.
- kubectl api-resources   # to list available k8s objects.
- kubectl api-version     # to list available api versions.
- kubectl get nodes       # to get list of nodes.
- kubectl get nodes -o wide   # to get IP of the nodes.
- kubectl get pods        # to get list of pods.
- kubectl get pods -o wide    # to get IP of the pods.
-
-
-
+kubectl cluster-info    # to get cluster information
+kubectl api-resources   # to list available k8s objects
+kubectl api-version     # to list available api versions
+kubectl get nodes       # to get list of nodes
+kubectl get nodes -o wide   # to get IP of the nodes
+kubectl get pods        # to get list of pods
+kubectl get pods -o wide    # to get IP of the pods
+INGRESS
+INGRESS: https://kubernetes.io/docs/concepts/services-networking/ingress/
+NGINX INGRESS CONTROLLER: https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-manifests/

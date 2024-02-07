@@ -1,9 +1,9 @@
 # KUBERNETES
 ## What is Kubernetes?
 
- 1> Kubernetes, often abbreviated as K8s
- 2> It is an open-source container orchestration platform.
- 3> It is designed to automate the deployment, scaling, and management of containerized applications.
+ * Kubernetes, often abbreviated as K8s
+ * It is an open-source container orchestration platform.
+ * It is designed to automate the deployment, scaling, and management of containerized applications.
 
 ## Why we use Kubernetes?
 
@@ -56,45 +56,45 @@ contributes to savings through optimized resource use and automation.
 
 API Server:
 
- The API Server acts as the central management entity and the frontend interface for the Kubernetes control plane.
- It processes RESTful requests to manage cluster resources and updates the corresponding objects in etcd.
- It serves as the communication hub for other control plane components to interact and manage the cluster.
+ * The API Server acts as the central management entity and the frontend interface for the Kubernetes control plane.
+ * It processes RESTful requests to manage cluster resources and updates the corresponding objects in etcd.
+ * It serves as the communication hub for other control plane components to interact and manage the cluster.
 
 ETCD:
 
- etcd is a lightweight, distributed key-value store that securely and consistently stores the critical data of the Kubernetes cluster.
- It holds the cluster's configuration and state, including information about nodes, pods, configurations, secrets, and the state of workloads.
+* etcd is a lightweight, distributed key-value store that securely and consistently stores the critical data of the Kubernetes cluster.
+* It holds the cluster's configuration and state, including information about nodes, pods, configurations, secrets, and the state of workloads.
 
 Scheduler:
 
- The Scheduler is responsible for assigning workloads, specifically pods, to appropriate nodes.
- It selects nodes for new pods based on resource requirements, quality of service requirements, affinity specifications, and other criteria.
+* The Scheduler is responsible for assigning workloads, specifically pods, to appropriate nodes.
+* It selects nodes for new pods based on resource requirements, quality of service requirements, affinity specifications, and other criteria.
 
 Controller Manager:
 
- This component runs various controller processes in the background to regulate the state of the cluster and handle routine tasks.
- It helps in maintaining the desired state of the cluster.
+* This component runs various controller processes in the background to regulate the state of the cluster and handle routine tasks.
+* It helps in maintaining the desired state of the cluster.
 
 kublet:
 
- The kubelet is responsible for executing commands that come from the Kubernetes control plane, including instructions from the scheduler.
- It communicates with the control plane and ensures that containers within pods are running as expected.
+* The kubelet is responsible for executing commands that come from the Kubernetes control plane, including instructions from the scheduler.
+* It communicates with the control plane and ensures that containers within pods are running as expected.
 
 Kube-proxy:
 
- Kube-proxy maintains network rules on nodes, allowing communication between Pods.
- It handles network forwarding, load balancing, and service-related network tasks.
+* Kube-proxy maintains network rules on nodes, allowing communication between Pods.
+* It handles network forwarding, load balancing, and service-related network tasks.
 
 Container Engine:
 
- The container engine on a worker node is responsible for executing and managing containers.
- It provides the runtime environment for running containerized applications within the Kubernetes cluster, handling tasks such as container creation, start-up, and resource isolation.
+* The container engine on a worker node is responsible for executing and managing containers.
+* It provides the runtime environment for running containerized applications within the Kubernetes cluster, handling tasks such as container creation, start-up, and resource isolation.
 
 POD:
 
- A Pod is the smallest deployable unit in Kubernetes.
- It's like wrapper around container.
- The worker node executes and hosts these Pods, running the specified containers within them.
+* A Pod is the smallest deployable unit in Kubernetes.
+* It's like wrapper around container.
+* The worker node executes and hosts these Pods, running the specified containers within them.
 
 
 ## Lifecycle of kubernetes
@@ -123,4 +123,5 @@ kubectl get pods -o wide    # to get IP of the pods
 
 INGRESS
 INGRESS: https://kubernetes.io/docs/concepts/services-networking/ingress/
+
 NGINX INGRESS CONTROLLER: https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-manifests/
